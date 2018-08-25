@@ -7,4 +7,15 @@ RUN yum install php-fpm nginx which htop procps php-xml iputils php-mysqlnd php-
     yum clean all && \
     rm -rf /tmp/*
 
+RUN rm -f /etc/nginx/nginx.conf && \
+    rm -f /etc/php.ini && \
+    rm -f /etc/php-fpm.conf && \
+    rm -f /etc/php-fpm.d/www.conf && \
+    mkdir /webroot
+
+COPY ./conf/nginx.conf /etc/nginx/nginx.conf
+COPY ./conf/php.ini /etc/php.ini
+COPY ./conf/php-fpm.conf /etc/php-fpm.conf
+COPY ./conf/www.conf /etc/php-fpm.d/www.conf
+
 # end
