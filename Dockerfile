@@ -1,7 +1,6 @@
 FROM fedora:26
 MAINTAINER xtexauthor <xtexauthor@gmail.com>
 
-
 # install packages
 RUN yum install php-fpm nginx which htop procps php-xml iputils php-mysqlnd php-memcached -y && \
     yum clean all && \
@@ -17,5 +16,7 @@ COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 COPY ./conf/php.ini /etc/php.ini
 COPY ./conf/php-fpm.conf /etc/php-fpm.conf
 COPY ./conf/www.conf /etc/php-fpm.d/www.conf
+
+ENTRYPOINT["/bin/bash"]
 
 # end
