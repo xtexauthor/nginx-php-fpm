@@ -17,7 +17,7 @@ COPY ./conf/php.ini /etc/php.ini
 COPY ./conf/php-fpm.conf /etc/php-fpm.conf
 COPY ./conf/www.conf /etc/php-fpm.d/www.conf
 COPY ./entrypoint.sh /root
-COPY ./keeyalived.sh /root
+COPY ./keepalived.sh /root
 
 ENTRYPOINT ["/root/entrypoint.sh"]
 
