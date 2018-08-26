@@ -1,8 +1,6 @@
 #!/bin/bash
 
 chown -R apache:apache /webroot
-
-while /bin/true
-do
-    sleep 1m
-done
+memcached -p 9963 -d start -u apache
+nginx
+php-fpm
