@@ -10,6 +10,7 @@ RUN rm -f /etc/nginx/nginx.conf && \
     rm -f /etc/php.ini && \
     rm -f /etc/php-fpm.conf && \
     rm -f /etc/php-fpm.d/www.conf && \
+    memcached -p 9963 -d start -u apache && \
     mkdir /webroot
 
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
