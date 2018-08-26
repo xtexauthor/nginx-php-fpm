@@ -21,6 +21,4 @@ COPY ./keepalived.sh /root
 
 ENTRYPOINT ["/root/entrypoint.sh"]
 
-CMD ["/root/keepalived.sh"]
-
 # end
