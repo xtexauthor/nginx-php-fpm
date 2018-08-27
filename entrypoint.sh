@@ -1,7 +1,7 @@
 #!/bin/bash
 
 chown -R apache:apache /webroot
-memcached -p 9963 -d start -u apache
+memcached -p 9963 --listen=127.0.0.1 -d start -u apache
 nginx
 php-fpm
 
