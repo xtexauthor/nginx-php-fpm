@@ -18,6 +18,6 @@ COPY ./conf/php-fpm.conf /etc/php-fpm.conf
 COPY ./conf/www.conf /etc/php-fpm.d/www.conf
 COPY ./entrypoint.sh /root
 
-ENTRYPOINT ["/root/entrypoint.sh"]
+CMD ["/root/entrypoint.sh"]
 
 # end
