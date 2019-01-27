@@ -13,9 +13,11 @@ RUN groupadd www && useradd  www -g www && usermod -a -G www apache && \
     rm -f /etc/php.ini && \
     rm -f /etc/php-fpm.conf && \
     rm -f /etc/php-fpm.d/www.conf && \
+    mkdir /etc/nginx/site.d && \
     mkdir /webroot
 
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
+COPY ./conf/webroot.conf /etc/nginx/site.d/webroot.conf
 COPY ./conf/php.ini /etc/php.ini
 COPY ./conf/php-fpm.conf /etc/php-fpm.conf
 COPY ./conf/www.conf /etc/php-fpm.d/www.conf
