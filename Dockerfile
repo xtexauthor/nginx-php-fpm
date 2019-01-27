@@ -1,8 +1,10 @@
 FROM fedora:26
 MAINTAINER xtexauthor <xtexauthor@gmail.com>
 
+ENV LANG C.UTF-8
+
 # install packages
-RUN yum install php-fpm nginx which htop procps memcached php-xml net-tools iputils php-mysqlnd php-memcached -y && \
+RUN yum install git php-fpm nginx which htop procps memcached php-xml net-tools iputils php-mysqlnd php-memcached -y && \
     yum clean all && \
     rm -rf /tmp/*
 
