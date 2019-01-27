@@ -4,11 +4,12 @@ MAINTAINER xtexauthor <xtexauthor@gmail.com>
 ENV LANG C.UTF-8
 
 # install packages
-RUN yum install git php-fpm nginx which htop procps memcached php-xml net-tools iputils php-mysqlnd php-memcached -y && \
+RUN yum install git php-fpm composer nginx which htop procps memcached php-xml net-tools iputils php-mysqlnd php-memcached -y && \
     yum clean all && \
     rm -rf /tmp/*
 
-RUN rm -f /etc/nginx/nginx.conf && \
+RUN groupadd www && useradd  www -g www && usermod -a -G www apache && \
+    rm -f /etc/nginx/nginx.conf && \
     rm -f /etc/php.ini && \
     rm -f /etc/php-fpm.conf && \
     rm -f /etc/php-fpm.d/www.conf && \
