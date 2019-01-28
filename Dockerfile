@@ -4,7 +4,7 @@ MAINTAINER xtexauthor <xtexauthor@gmail.com>
 ENV LANG C.UTF-8
 
 # install packages
-RUN yum install git php-fpm composer nginx which htop procps memcached php-xml net-tools iputils php-mysqlnd php-memcached -y && \
+RUN yum install vim git php-fpm composer nginx which htop procps memcached php-xml net-tools iputils php-mysqlnd php-memcached -y && \
     yum clean all && \
     rm -rf /tmp/*
 
